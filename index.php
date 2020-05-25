@@ -8,14 +8,14 @@ use StrChangers\Trimmer;
 
 $string = '   Здравствуйте друзья и товарищи! ';
 
-$checker = new CheckChain($string);
+$stringHandler = new CheckUpdateChain($string);
 
-$checker->add(new EmptyChecker());
-$checker->add(new DigitChecker());
-$checker->add(new Reverse());
-$checker->add(new Trimmer());
+$stringHandler->add(new EmptyChecker());
+$stringHandler->add(new DigitChecker());
+$stringHandler->add(new Reverse());
+$stringHandler->add(new Trimmer());
 
-$checker->run();
+$stringHandler->run();
 
 print "<b>Start sring: </b>'".$string."'<br />";
 print "<b>Result sring: </b>'".$checker->getString()."'";
