@@ -1,0 +1,2 @@
+# stringmanager
+Test project
