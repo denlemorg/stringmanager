@@ -16,19 +16,22 @@ class CheckChain
     /**
      * @param CheckUpdateInterface $checkUnit
      */
-    public function add(CheckUpdateInterface $checkUnit){
+    public function add(CheckUpdateInterface $checkUnit)
+    {
         $this->stackObjects[] = $checkUnit;
     }
 
-    public function run(){
-        if (count($this->stackObjects) > 0){
-            foreach ($this->stackObjects as $k => $v){
+    public function run()
+    {
+        if (count($this->stackObjects) > 0) {
+            foreach ($this->stackObjects as $k => $v) {
                 $this->str = $v->checkUpdateString($this->str);
             }
         }
     }
 
-    public function getString(){
+    public function getString()
+    {
         return $this->str;
     }
 }

@@ -1,0 +1,13 @@
+{
+    "name": "denis/stringmanager",
+    "authors": [
+        {
+            "name": "denlem",
+            "email": "denislem@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    }
+}

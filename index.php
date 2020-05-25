@@ -1,4 +1,15 @@
 <?php
+/**
+ * Docuementation
+ * php version 7.2
+ *
+ * @category Category
+ * @package  Package_Test
+ * @author   Author <author@name.com>
+ * @license  License http://link.com
+ * @link     http://link.com
+ */
+
 require_once 'autoloader.php';
 
 use Checkers\EmptyChecker;
@@ -19,4 +30,3 @@ $stringHandler->run();
 
 print "<b>Start sring: </b>'".$string."'<br />";
 print "<b>Result sring: </b>'".$checker->getString()."'";
-
