@@ -1,6 +1,6 @@
 <?php
 /**
- * Docuementation
+ * Documentation
  * php version 7.2
  *
  * @category Category
