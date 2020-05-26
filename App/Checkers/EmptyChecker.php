@@ -1,15 +1,15 @@
 <?php
-namespace Checkers;
+namespace App\Checkers;
 
-use CheckUpdateInterface;
+use App\CheckInterface;
 
-class EmptyChecker implements CheckUpdateInterface
+class EmptyChecker implements CheckInterface
 {
     /**
      * @param str $string
      * @return string
      */
-    public function checkUpdateString(string $string): string
+    public function checkString(string $string): string
     {
 //        print '-EmptyChecker-<br />';
         if (!$string || $string == '') {

@@ -1,11 +1,11 @@
 <?php
-namespace StrChangers;
+namespace App\StrChangers;
 
-use CheckUpdateInterface;
+use App\UpdateInterface;
 
-class Reverse implements CheckUpdateInterface
+class Reverse implements UpdateInterface
 {
-    public function checkUpdateString(string $string): string
+    public function updateString(string $string): string
     {
 //        print '-StringReverse-<br />';
         $stringArray = explode(" ", $string);

@@ -1,15 +1,15 @@
 <?php
-namespace Checkers;
+namespace App\Checkers;
 
-use CheckUpdateInterface;
+use App\CheckInterface;
 
-class DigitChecker implements CheckUpdateInterface
+class DigitChecker implements CheckInterface
 {
     /**
      * @param str $string
      * @return string
      */
-    public function checkUpdateString(string $string): string
+    public function checkString(string $string): string
     {
 //        print "-DigitChecker-<br />";
         if (preg_match('/\d/', $string)) {
