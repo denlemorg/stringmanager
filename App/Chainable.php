@@ -11,6 +11,7 @@ class Chainable
 
     private $checkObjects = [];
     private $updateObjects = [];
+    private $errors = [];
 
     public function __construct($str)
     {
@@ -37,7 +38,7 @@ class Chainable
     {
         if (count($this->checkObjects) > 0) {
             foreach ($this->checkObjects as $k => $v) {
-                $this->str = $v->checkString($this->str);
+                $this->checkString($v);
             }
         }
         if (count($this->updateObjects) > 0) {
@@ -47,8 +48,29 @@ class Chainable
         }
     }
 
-    public function getString()
+    /**
+     * @param $checker
+     */
+    private function checkString($checker): void
+    {
+        if (!$checker->checkString($this->str)){
+            $this->errors[] = $checker->getError();
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getString(): string
     {
         return $this->str;
     }
+    /**
+     * @return array
+     */
+    public function getErrors(): array
+    {
+        return $this->errors;
+    }
+
 }

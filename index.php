@@ -19,6 +19,7 @@ use App\StrChangers\Reverse;
 use App\StrChangers\Trimmer;
 
 $string = '   Здравствуйте друзья и товарищи! ';
+// $string = '';
 
 $stringHandler = new Chainable($string);
 
@@ -29,5 +30,13 @@ $stringHandler->addUpdate(new Trimmer());
 
 $stringHandler->run();
 
-print "<b>Start sring: </b>'".$string."'<br />";
-print "<b>Result sring: </b>'".$stringHandler->getString()."'";
+
+if (empty($stringHandler->getErrors())){
+    print "<b>Start sring: </b>'".$string."'<br />";
+    print "<b>Result sring: </b>'".$stringHandler->getString()."'";
+}else{
+    print "<pre>";
+    var_dump($stringHandler->getErrors());
+}
+
+

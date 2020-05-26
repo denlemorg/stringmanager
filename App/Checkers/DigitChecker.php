@@ -5,16 +5,23 @@ use App\CheckInterface;
 
 class DigitChecker implements CheckInterface
 {
+    private $error = 'Ошибка: Строка имеет числа';
     /**
      * @param str $string
      * @return string
      */
-    public function checkString(string $string): string
+    public function checkString(string $string): bool
     {
-//        print "-DigitChecker-<br />";
         if (preg_match('/\d/', $string)) {
-            throw new Exception('Ошибка: Строка имеет числа');
+            return false;
         }
-        return $string;
+        return true;
+    }
+    /**
+     * @return string
+     */
+    public function getError(): string
+    {
+        return $this->error;
     }
 }

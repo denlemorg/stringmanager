@@ -3,5 +3,5 @@ namespace App;
 
 interface UpdateInterface
 {
-    public function updateString(string $string);
+    public function updateString(string $string): string;
 }
