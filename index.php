@@ -30,13 +30,10 @@ $stringHandler->addUpdate(new Trimmer());
 
 $stringHandler->run();
 
-
-if (empty($stringHandler->getErrors())){
+if (empty($stringHandler->getErrors())) {
     print "<b>Start sring: </b>'".$string."'<br />";
     print "<b>Result sring: </b>'".$stringHandler->getString()."'";
-}else{
+} else {
     print "<pre>";
     var_dump($stringHandler->getErrors());
 }
-
-

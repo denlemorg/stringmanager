@@ -53,7 +53,7 @@ class Chainable
      */
     private function checkString($checker): void
     {
-        if (!$checker->checkString($this->str)){
+        if (!$checker->checkString($this->str)) {
             $this->errors[] = $checker->getError();
         }
     }
@@ -72,5 +72,4 @@ class Chainable
     {
         return $this->errors;
     }
-
 }
